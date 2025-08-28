@@ -18,10 +18,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         while(true){
             String[] input = scanner.nextLine().split(" ");
-            if (input.length != 1 && input.length != 2){
-                System.out.println("Illegal arguments");
-                continue;
-            }
             switch (input[0]){
                 case ADD:
                     if (server.addFile(input[1])){
@@ -46,7 +42,8 @@ public class Main {
                     break;
                 case EXIT:
                     return;
-
+                default:
+                    System.out.println("Illegal Argument");
             }
         }
 
